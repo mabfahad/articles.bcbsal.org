@@ -1,0 +1,98 @@
+{
+  "name": "surge",
+  "version": "2.0.0",
+  "description": "An optimized framework to build WordPress websites.",
+  "scripts": {
+    "dev": "npm run clean && webpack --watch --node-env development",
+    "prod": "npm run clean && webpack --node-env production",
+    "clean": "rimraf ./assets/*",
+    "postinstall": "composer install && ./vendor/bin/phpcs --config-set installed_paths ../../wp-coding-standards/wpcs/",
+    "lint:js": "eslint --quiet --fix 'src/js/**/*.js'",
+    "lint:scss": "stylelint --fix 'src/scss/**/*.scss'",
+    "lint:php": "npm run lint:phpcbf && npm run lint:phpcs",
+    "lint:phpcbf": "php ./vendor/bin/phpcbf --standard=WordPress --exclude=WordPress.NamingConventions.PrefixAllGlobals,WordPress.PHP.DiscouragedPHPFunctions --extensions=php  --ignore=vendor,node_modules .",
+    "lint:phpcs": "php ./vendor/bin/phpcs --standard=WordPress --exclude=WordPress.NamingConventions.PrefixAllGlobals,WordPress.PHP.DiscouragedPHPFunctions --extensions=php  --ignore=vendor,node_modules ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint:js"
+    ],
+    "src/**/*.scss": [
+      "npm run lint:scss"
+    ],
+    "**/*.php": [
+      "npm run lint:phpcbf",
+      "npm run lint:phpcs"
+    ]
+  },
+  "keywords": [
+    "cms",
+    "wordpress",
+    "surge"
+  ],
+  "author": {
+    "name": "Rhythm Shahriar",
+    "email": "me@rhy.io",
+    "url": "https://rhy.io"
+  },
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">= 16.0.0",
+    "npm": ">= 8.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-env": "^7.17.10",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "browserslist": "^4.19.1",
+    "copy-webpack-plugin": "^10.2.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
+    "file-loader": "^6.2.0",
+    "got": "^12.1.0",
+    "husky": "^4.3.8",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^7.0.0",
+    "imagemin-webp-webpack-plugin": "^3.3.6",
+    "lint-staged": "^12.3.7",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass": "^7.0.1",
+    "open-cli": "^7.0.1",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^12.4.0",
+    "semver-regex": "^4.0.5",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.8.2",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0",
+    "terser-webpack-plugin": "^5.3.3",
+    "trim-newlines": "^4.0.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "masonry-layout": "^4.2.2",
+    "slick-carousel": "^1.8.1"
+  }
+}

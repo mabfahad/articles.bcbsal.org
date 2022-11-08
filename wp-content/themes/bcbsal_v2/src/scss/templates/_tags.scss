@@ -1,0 +1,29 @@
+.tag {
+    .archive-header__heading {
+        margin-bottom: - rem(20px);
+    }
+    .archive-most-recent-filter {
+        @include screen(sm) {
+            margin-top: rem(14px);
+        }
+    }
+    .archive-most-recent__posts {
+        border-top: 1px solid $square-light-line;
+    }
+    .filter-by-categories {
+        margin-bottom: rem(48px);
+
+        @include screen(sm) {
+            margin-bottom: rem(34px);
+        }
+    }
+    .filter-by-categories__post {
+        &--featured {
+            margin: rem(52px) 0 rem(90px);
+
+            @include screen(sm) {
+                margin: rem(27px) 0 rem(60px);
+            }
+        }
+    }
+}

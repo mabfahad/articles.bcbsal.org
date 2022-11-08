@@ -1,0 +1,10 @@
+.home-featured {
+    &__post {
+        margin-bottom: rem(118px);
+        margin-top: rem(46px);
+
+        @include screen(sm) {
+            margin-bottom: rem(62px);
+        }
+    }
+}

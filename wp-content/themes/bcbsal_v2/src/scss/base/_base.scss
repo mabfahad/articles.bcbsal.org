@@ -1,0 +1,118 @@
+/*
+|------------------------------------------------------------------|
+|                        DEFAULT STYLES							   |
+|------------------------------------------------------------------|
+*/
+
+@import "grids";
+@import "utilities";
+@import "typography";
+
+/* Base styles */
+
+* {
+    appearance: none;
+    box-sizing: border-box;
+    /* stylelint-disable-next-line */
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+*:focus {
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $body-font;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+sup {
+    font-size: rem(12px);
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+}
+
+a {
+    text-decoration: none;
+}
+
+// Custom checkbox
+input[type="checkbox"] {
+    border: 1px solid $square-grey-mid;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    min-width: 20px;
+    transition: border-color 0.3s;
+    width: 20px;
+    &:checked {
+        border: none;
+        &::before {
+            align-items: center;
+            background-color: $square-market-blue;
+            border: 1px solid $square-market-blue;
+            border-radius: 4px;
+            content: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.16588 7.8332C5.33922 7.8332 5.50589 7.76654 5.63922 7.63987L12.3059 0.973203L11.3659 0.0332031L5.16588 6.22654L1.63922 2.69987L0.699219 3.63987L4.69922 7.63987C4.82589 7.76654 4.99255 7.8332 5.16588 7.8332Z' fill='white'/%3E%3C/svg%3E%0A");
+            display: flex;
+            height: 20px;
+            justify-content: center;
+            width: 20px;
+        }
+    }
+    &:hover {
+        border-color: $square-market-blue;
+    }
+}
+
+.dnone {
+    display: none;
+}
+
+.nscroll {
+    overflow: hidden;
+}
+
+.nclick {
+    pointer-events: none;
+}
+
+.backdrop {
+    background-color: $square-backdrop;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+/* stylelint-disable-line */
+form[id*="mktoForm_"] {
+    display: none;
+}

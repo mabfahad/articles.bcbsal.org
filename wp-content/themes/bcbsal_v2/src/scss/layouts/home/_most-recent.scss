@@ -1,0 +1,39 @@
+.home-most-recent {
+    margin-bottom: rem(84px);
+    &__post {
+        padding: em(36px) 0 em(32px);
+
+        @include screen(sm) {
+            padding: em(28px) 0 em(24px);
+        }
+        &:nth-child(2) {
+            border-top: 0;
+            padding-top: 0;
+        }
+        .list-item-content__title {
+            max-width: 100%;
+            a {
+                font-size: rem(24px);
+                line-height: rem(34px);
+
+                @include screen(sm) {
+                    font-size: rem(20px);
+                    line-height: rem(26px);
+                }
+            }
+        }
+        .list-item__image {
+            min-width: 103px;
+            img {
+                max-width: 103px;
+            }
+
+            @include screen(sm) {
+                min-width: 68px;
+                img {
+                    max-width: 68px;
+                }
+            }
+        }
+    }
+}

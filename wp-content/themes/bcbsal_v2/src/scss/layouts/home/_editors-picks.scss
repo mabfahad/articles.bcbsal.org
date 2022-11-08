@@ -1,0 +1,150 @@
+.home-editors-picks {
+    margin-bottom: rem(120px);
+
+    @include screen(sm) {
+        margin-bottom: rem(62px);
+    }
+    &__description {
+        font-size: rem(16px);
+        line-height: rem(24px);
+        margin: 0 0 rem(40px);
+        max-width: 584px;
+
+        @include screen (md, min) {
+            font-size: rem(20px);
+            line-height: rem(32px);
+            margin: 0 auto rem(80px);
+            text-align: center;
+        }
+    }
+    .sq-section-title {
+        .byline {
+            color: $square-grey;
+        }
+    }
+    &-left {
+        @include screen(sm) {
+            margin-bottom: rem(40px);
+            padding-right: 0;
+        }
+        &__post {
+            @include screen(sm, min) {
+                border-bottom: 1px solid $square-light-line;
+                margin-bottom: rem(36px);
+                padding-bottom: em(32px);
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        @include screen(sm) {
+            .slick-slide > div {
+                border-right: 1px solid $square-light-line;
+                margin-right: 13px;
+            }
+            &__post {
+                padding-bottom: em(16px);
+                padding-right: em(24px);
+            }
+            .slick-list {
+                padding: 0 20% 0 0;
+            }
+        }
+    }
+    &-middle {
+        @include screen(sm) {
+            margin-bottom: rem(32px);
+        }
+        &__post {
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            &-content {
+                background-color: $square-black;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
+                padding: em(20px) em(30px) em(30px);
+
+                @include screen(md) {
+                    padding: em(20px);
+                }
+            }
+            &-title {
+                margin-top: rem(12px);
+                a {
+                    color: $white;
+                    font-size: rem(32px);
+                    font-weight: 500;
+                    line-height: rem(40px);
+                    transition: color 0.3s;
+                    &:hover {
+                        color: $square-market-blue;
+                    }
+                }
+            }
+            &-deck {
+                color: $white;
+                font-size: rem(16px);
+                line-height: rem(24px);
+                margin-top: rem(16px);
+            }
+            &-image {
+                margin-bottom: - rem(5px);
+                img {
+                    height: auto;
+                    max-width: 100%;
+                    width: 100%;
+                }
+            }
+            &-explore-url {
+                margin-top: rem(16px);
+                padding: em(14px);
+
+                @include screen(sm) {
+                    margin-top: rem(48px);
+                }
+            }
+            &-type {
+                color: $white;
+                font-family: $body-font;
+                font-size: rem(11px);
+                font-weight: 500;
+                letter-spacing: 1.2px;
+                line-height: rem(18px);
+                text-transform: uppercase;
+            }
+        }
+    }
+    &-right {
+        &__post {
+            flex-direction: column;
+        }
+        &__post .card-large-image {
+            &__image {
+                min-width: 100%;
+            }
+            &-content {
+                margin-left: 0;
+                margin-top: rem(28px);
+                &__deck {
+                    margin-top: rem(16px);
+                }
+            }
+            &__title {
+                a {
+                    font-size: rem(32px);
+                    line-height: rem(40px);
+                }
+            }
+            &__meta {
+                margin-bottom: rem(12px);
+            }
+        }
+    }
+}

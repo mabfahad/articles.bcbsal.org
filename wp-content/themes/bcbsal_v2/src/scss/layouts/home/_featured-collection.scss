@@ -1,0 +1,8 @@
+.home-featured-collection {
+    margin-bottom: rem(108px);
+    padding: em(118px) 0;
+
+    @include screen(sm) {
+        padding: em(16px) 0;
+    }
+}

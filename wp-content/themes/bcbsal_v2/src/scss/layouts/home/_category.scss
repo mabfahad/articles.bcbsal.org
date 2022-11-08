@@ -1,0 +1,26 @@
+.home-category {
+    margin-bottom: rem(114px);
+
+    @include screen(sm) {
+        margin-bottom: rem(60px);
+    }
+    &__featured {
+        &-post {
+            margin-bottom: rem(60px);
+
+            @include screen(sm) {
+                margin-bottom: rem(34px);
+            }
+        }
+        &-grid {
+            &-post {
+                border-top: 1px solid $square-light-line;
+                padding-top: em(32px);
+
+                @include screen(sm) {
+                    padding-top: em(28px);
+                }
+            }
+        }
+    }
+}

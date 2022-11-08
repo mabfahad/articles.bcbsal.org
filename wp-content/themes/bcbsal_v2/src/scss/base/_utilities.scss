@@ -1,0 +1,36 @@
+/*
+|------------------------------------------------------------------|
+|                          UTILITIES 							   |
+|------------------------------------------------------------------|
+*/
+
+// Convert px to rem
+// @param $size - size in px
+@function rem($size) {
+    $rem-size: $size / 16px;
+
+    @return $rem-size * 1rem;
+}
+
+// Convert px to em
+// @param $size - size in px
+@function em($size) {
+    $em-size: $size / 16px;
+
+    @return $em-size * 1em;
+}
+
+// Loads font families
+@mixin font-face($font-name, $file-name, $font-weight, $font-style) {
+    @font-face {
+        font-display: swap;
+        font-family: "#{$font-name}";
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src:
+            url("../fonts/#{$file-name}.eot?#iefix") format("embedded-opentype"),
+            url("../fonts/#{$file-name}.woff2") format("woff2"),
+            url("../fonts/#{$file-name}.woff") format("woff"),
+            url("../fonts/#{$file-name}.ttf")  format("truetype");
+    }
+}

@@ -1,0 +1,25 @@
+.archive-more-podcasts {
+    [class*="col-"] {
+        margin-bottom: rem(75px);
+
+        @include screen(sm) {
+            margin-bottom: rem(48px);
+        }
+    }
+    &-load-more {
+        margin-bottom: rem(120px);
+        margin-top: rem(60px);
+        text-align: center;
+
+        @include screen(sm) {
+            margin-bottom: rem(55px) 0;
+        }
+        &__button {
+            font-size: rem(16px);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: rem(21px);
+            padding: em(14px) em(20px);
+        }
+    }
+}

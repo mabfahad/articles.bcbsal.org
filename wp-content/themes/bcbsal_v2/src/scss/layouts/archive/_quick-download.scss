@@ -1,0 +1,32 @@
+.archive-quick-download {
+    margin-bottom: rem(115px);
+    [class*="col-"] {
+        @include screen(sm, min) {
+            border-right: 1px solid $square-light-line;
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    @include screen(sm) {
+        margin-bottom: rem(60px);
+        [class*="col-"] {
+            &:first-child {
+                .card-download {
+                    padding: 0 0 em(24px);
+                }
+            }
+            &:last-child {
+                .card-download {
+                    border-bottom: 0;
+                    padding: em(24px) 0 0;
+                }
+            }
+        }
+        .card-download {
+            border-bottom: 1px solid $square-light-line;
+            padding: em(24px) 0;
+        }
+    }
+}

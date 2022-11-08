@@ -1,0 +1,89 @@
+.case-study-brief {
+    .sq-section-title {
+        border-top: 0;
+    }
+    .container {
+        padding-bottom: em(120px);
+        position: relative;
+
+        @include screen(sm) {
+            padding-bottom: em(48px);
+        }
+        &::after {
+            background-color: $square-light-line;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+        }
+    }
+
+    @include screen(sm) {
+        [class*="col-"] {
+            margin-bottom: rem(30px);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    h3 {
+        color: $square-black;
+        font-family: $body-font;
+        font-size: rem(20px);
+        font-weight: 600;
+        line-height: rem(32px);
+        margin-bottom: rem(10px);
+
+        @include screen(sm) {
+            font-size: rem(16px);
+            line-height: rem(24px);
+        }
+    }
+    ul {
+        font-size: rem(20px);
+        line-height: rem(32px);
+        list-style-type: none;
+
+        @include screen(sm) {
+            font-size: rem(16px);
+            line-height: rem(24px);
+        }
+        li {
+            a {
+                border-bottom: 1px solid transparent;
+                color: $square-market-blue;
+                padding-bottom: em(1px);
+                transition: border-bottom 0.3s;
+            }
+            &:hover {
+                a {
+                    border-bottom: 1px solid $square-market-blue;
+                }
+            }
+        }
+    }
+    &__text {
+        font-size: rem(20px);
+        line-height: rem(32px);
+
+        @include screen(sm) {
+            font-size: rem(16px);
+            line-height: rem(24px);
+        }
+        &:nth-child(2) {
+            display: block;
+        }
+    }
+    &__cta-desc {
+        display: block;
+        font-size: rem(16px);
+        line-height: rem(24px);
+        margin-bottom: rem(20px);
+    }
+    .button {
+        padding: em(14px);
+    }
+}

@@ -1,0 +1,37 @@
+.home-podcasts {
+    margin-bottom: rem(64px);
+    &__item {
+        border-bottom: 1px solid $square-light-line;
+        padding-bottom: em(32px);
+
+        @include screen(sm) {
+            padding-bottom: em(24px);
+        }
+        .card-left-image__title a {
+            line-height: rem(30px);
+        }
+    }
+    [class*="col-"] {
+        margin-bottom: rem(28px);
+
+        @include screen(sm, min) {
+            margin-bottom: rem(36px);
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+                .home-podcasts__item {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        @include screen(sm) {
+            &:last-child {
+                margin-bottom: 0;
+                .home-podcasts__item {
+                    border-bottom: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}

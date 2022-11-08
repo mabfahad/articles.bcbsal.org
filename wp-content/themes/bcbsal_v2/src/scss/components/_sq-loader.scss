@@ -1,0 +1,34 @@
+.sq-loader {
+    display: none;
+    position: relative;
+    z-index: 10;
+    &::before {
+        animation: blink 1s;
+        animation-direction: forward;
+        animation-iteration-count: infinite;
+        background-color: $square-market-blue;
+        border-radius: 2px;
+        content: "";
+        height: 12px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+    }
+
+    @keyframes blink {
+        from {
+            border-radius: 2px;
+            height: 12px;
+            opacity: 1;
+            width: 12px;
+        }
+        to {
+            border-radius: 7px;
+            height: 42px;
+            opacity: 0;
+            width: 42px;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.archive-podcast-episodes,
+.archive-collection-articles {
+    &__posts {
+        margin-bottom: rem(64px);
+
+        @include screen(sm, min) {
+            margin-bottom: rem(120px);
+        }
+    }
+    .list-item {
+        margin-top: rem(24px);
+        padding-top: em(28px);
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        @include screen(sm, min) {
+            margin-top: rem(32px);
+            padding-top: em(36px);
+        }
+        &__image {
+            min-width: 68px;
+            img {
+                max-width: 68px;
+            }
+
+            @include screen(sm, min) {
+                min-width: 168px;
+                img {
+                    max-width: 168px;
+                }
+            }
+        }
+        &-content {
+            margin-left: rem(24px);
+
+            @include screen(sm, min) {
+                margin-left: rem(42px);
+            }
+            &__title {
+                font-size: rem(20px);
+                line-height: rem(26px);
+
+                @include screen(sm, min) {
+                    font-size: rem(24px);
+                    line-height: rem(34px);
+                }
+            }
+        }
+    }
+}

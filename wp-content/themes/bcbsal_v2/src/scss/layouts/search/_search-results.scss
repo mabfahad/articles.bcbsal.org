@@ -1,0 +1,160 @@
+.search-results {
+    &-no-posts {
+        display: none;
+        margin-bottom: rem(126px);
+        margin-top: - rem(390px);
+        &--visible {
+            display: block;
+        }
+
+        @include screen(sm) {
+            margin-bottom: rem(47px);
+            margin-top: - rem(361px);
+        }
+        h2 {
+            font-size: rem(32px);
+            font-weight: 500;
+            line-height: rem(40px);
+            margin: 0 auto rem(12px);
+            max-width: 600px;
+            text-align: center;
+
+            @include screen(sm) {
+                font-size: rem(24px);
+                line-height: rem(32px);
+                margin: 0 auto rem(8px);
+            }
+        }
+        p {
+            font-size: rem(16px);
+            line-height: rem(21px);
+            text-align: center;
+        }
+        .search-modal__taxonomies {
+            height: 100%;
+            overflow: auto;
+
+            @include screen(sm) {
+                &-taxonomy:first-child {
+                    h4 {
+                        border-top: 1px solid $square-light-line;
+                        padding-top: em(16px);
+                    }
+                }
+            }
+        }
+    }
+    &-posts {
+        margin-bottom: rem(90px);
+        min-height: 300px;
+
+        @include screen(sm) {
+            margin-bottom: rem(60px);
+        }
+        .list-item {
+            margin-top: rem(24px);
+            padding-top: em(28px);
+            &:first-of-type {
+                border-top: none;
+                margin-top: 0;
+                padding-top: 0;
+            }
+
+            @include screen(sm, min) {
+                margin-top: rem(32px);
+                padding-top: em(36px);
+            }
+            &__image {
+                min-width: 68px;
+                img {
+                    max-width: 68px;
+                }
+
+                @include screen(sm, min) {
+                    min-width: 103px;
+                    img {
+                        max-width: 103px;
+                    }
+                }
+            }
+            &-content {
+                margin-left: rem(24px);
+
+                @include screen(sm, min) {
+                    margin-left: rem(42px);
+                }
+                &__title {
+                    a {
+                        font-size: rem(20px);
+                        line-height: rem(26px);
+
+                        @include screen (sm, min) {
+                            font-size: rem(24px);
+                            line-height: rem(34px);
+                        }
+                    }
+                }
+            }
+        }
+        &-load-more {
+            margin-bottom: rem(120px);
+            text-align: center;
+
+            @include screen(sm) {
+                margin-bottom: rem(64px);
+                margin-top: 0;
+            }
+            &__button {
+                font-size: rem(16px);
+                font-weight: 600;
+                letter-spacing: -0.01em;
+                line-height: rem(21px);
+                padding: em(14px) em(20px);
+            }
+        }
+    }
+    &__count {
+        align-items: center;
+        display: flex;
+        font-size: rem(24px);
+        font-weight: 500;
+        justify-content: center;
+        line-height: rem(26px);
+        margin: rem(39px) 0;
+        text-align: center;
+
+        @include screen(sm) {
+            margin: rem(32px) 0 rem(20px);
+        }
+        span {
+            color: $square-market-blue;
+            margin-right: rem(4px);
+        }
+    }
+    &__clear-filter {
+        color: $square-market-blue;
+        cursor: pointer;
+        font-family: $body-font;
+        font-size: rem(11px);
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        line-height: rem(18px);
+        margin-left: rem(20px);
+        margin-top: rem(4.5px);
+        text-transform: uppercase;
+
+        @include screen(sm) {
+            margin: rem(6px) rem(16px) 0 rem(16px);
+        }
+    }
+    &__loader {
+        left: 50%;
+        margin-top: rem(200px);
+        position: absolute;
+        transform: translateX(-50%);
+
+        @include screen(sm) {
+            margin-top: rem(120px);
+        }
+    }
+}

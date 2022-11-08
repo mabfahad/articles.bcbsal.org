@@ -1,0 +1,15 @@
+.sq-title {
+    &__tool,
+    &__case-studies,
+    &__podcast {
+        display: block;
+        font-weight: 400;
+    }
+}
+
+[class*="__title"] {
+    [class*="sq-title__"] {
+        color: $square-grey;
+        transition: color 0.3s;
+    }
+}

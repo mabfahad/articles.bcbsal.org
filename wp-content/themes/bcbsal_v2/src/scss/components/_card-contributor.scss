@@ -1,0 +1,39 @@
+.contributor-card {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: rem(24px);
+
+    @include screen (md, min) {
+        margin-bottom: rem(40px);
+    }
+    &__image {
+        height: 80px;
+        margin-right: rem(24px);
+        width: 80px;
+        img {
+            border-radius: 50%;
+            height: auto;
+            max-width: 80px;
+            width: 100%;
+        }
+    }
+    &__content {
+        * {
+            font-size: rem(16px);
+            line-height: rem(24px);
+            margin: 0;
+        }
+        a {
+            color: $square-black;
+            transition: color 0.4s;
+            &:hover {
+                color: $square-market-blue;
+            }
+        }
+    }
+    &__author {
+        font-family: $body-font;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,43 @@
+.card-left-image {
+    display: flex;
+    &__image {
+        margin-right: rem(40px);
+        min-width: 168px;
+        img {
+            border-radius: 16px;
+            height: auto;
+            margin-bottom: - rem(4px);
+            max-width: 168px;
+            width: 100%;
+        }
+
+        @include screen(sm) {
+            margin-right: rem(24px);
+            min-width: 68px;
+            img {
+                border-radius: 8px;
+                max-width: 68px;
+            }
+        }
+    }
+    &__title {
+        margin-top: rem(16px);
+        a {
+            color: $square-black;
+            display: inline-block;
+            font-family: $heading-font;
+            font-size: rem(24px);
+            font-weight: 500;
+            line-height: rem(34px);
+            transition: color 0.3s;
+
+            @include screen(sm) {
+                font-size: rem(20px);
+                line-height: rem(26px);
+            }
+            &:hover {
+                color: $square-market-blue;
+            }
+        }
+    }
+}

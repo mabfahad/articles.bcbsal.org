@@ -1,0 +1,42 @@
+.single-contact-us {
+    margin-bottom: rem(120px);
+
+    @include screen(sm) {
+        margin-bottom: rem(64px);
+    }
+
+    @include screen(md) {
+        [class*="col-md"] {
+            margin-bottom: rem(41px);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    h3 {
+        font-family: $body-font;
+        font-size: rem(11px);
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        line-height: rem(18px);
+        margin-bottom: rem(10px);
+        text-transform: uppercase;
+    }
+    ul {
+        list-style-type: none;
+        li {
+            margin-bottom: rem(6px);
+            a {
+                color: $square-black;
+                font-family: $heading-font;
+                font-size: rem(24px);
+                font-weight: 500;
+                line-height: rem(26px);
+                transition: color 0.4s;
+                &:hover {
+                    color: $square-market-blue;
+                }
+            }
+        }
+    }
+}

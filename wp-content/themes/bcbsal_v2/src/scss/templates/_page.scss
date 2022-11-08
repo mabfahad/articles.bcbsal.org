@@ -1,0 +1,73 @@
+.page-404 {
+    &-header {
+        padding-top: em(54px);
+        text-align: center;
+
+        @include screen(sm, min) {
+            padding-top: em(84px);
+        }
+        &__subheading {
+            color: $square-market-blue;
+            font-family: $heading-font-cond;
+            font-size: rem(14px);
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            line-height: rem(20px);
+            margin-bottom: rem(14px);
+            text-transform: uppercase;
+        }
+        &__heading {
+            font-family: $heading-font;
+            font-size: rem(36px);
+            font-weight: 500;
+            letter-spacing: -0.75px;
+            line-height: rem(44px);
+            margin: 0 auto rem(43px);
+            max-width: 1000px;
+
+            @include screen(md, min) {
+                font-size: rem(64px);
+                line-height: rem(72px);
+                margin-bottom: rem(60px);
+            }
+        }
+        &__buttons {
+            .button {
+                font-size: rem(16px);
+                font-weight: 600;
+                letter-spacing: -0.01em;
+                line-height: rem(21px);
+                padding: em(14px);
+                &:first-child {
+                    border: 1px solid $square-market-blue;
+                    &:hover {
+                        border-color: $square-market-blue-dark;
+                    }
+
+                    @include screen(sm) {
+                        margin-bottom: rem(13px);
+                    }
+                    img {
+                        margin-bottom: - rem(2px);
+                        margin-left: rem(13px);
+                    }
+                }
+
+                @include screen(sm, min) {
+                    &:last-child {
+                        margin-left: rem(15px);
+                    }
+                }
+            }
+        }
+    }
+    &-posts {
+        margin-bottom: rem(82px);
+        margin-top: rem(90px);
+
+        @include screen(sm) {
+            margin-bottom: rem(34px);
+            margin-top: rem(60px);
+        }
+    }
+}

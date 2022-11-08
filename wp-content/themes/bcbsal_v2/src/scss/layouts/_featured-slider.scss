@@ -1,0 +1,297 @@
+.featured-slider {
+    background-color: $square-black;
+    &-container {
+        @include screen(sm, min) {
+            display: flex;
+        }
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1440px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    &-slide {
+        position: relative;
+
+        @include screen(sm, min) {
+            display: flex;
+            &::before {
+                background-color: $square-dark-line;
+                content: "";
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 1px;
+            }
+            &::after {
+                background-color: $square-dark-line;
+                content: "";
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 1px;
+            }
+            &:first-child {
+                &::after {
+                    display: none;
+                }
+            }
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        @include screen(sm) {
+            &::before {
+                background-color: $square-dark-line;
+                bottom: 0;
+                content: "";
+                height: 1px;
+                left: 16px;
+                position: absolute;
+                transform: translateX(0);
+                width: calc(100% - 32px);
+            }
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        &-title {
+            color: $white;
+            display: flex;
+            font-family: $body-font;
+            padding: 0 em(30px);
+            text-align: center;
+
+            @include screen(sm, min) {
+                flex-direction: column;
+            }
+
+            @include screen(sm) {
+                padding: em(26px) em(16px);
+                text-align: left;
+            }
+            &--disabled {
+                pointer-events: none;
+            }
+            span.sl {
+                display: inline-block;
+                font-family: $body-font;
+                font-size: rem(11px);
+                font-weight: 500;
+                letter-spacing: 1.2px;
+                margin-bottom: rem(24px);
+
+                @include screen(sm) {
+                    margin-bottom: 0;
+                    margin-right: rem(12px);
+                }
+            }
+            h3 {
+                cursor: pointer;
+                font-family: $body-font;
+                font-size: rem(16px);
+                font-weight: 500;
+                letter-spacing: 0.25px;
+                line-height: rem(20px);
+                transition: color 0.3s;
+
+                @include screen(sm) {
+                    margin-top: - rem(2px);
+                }
+
+                @include screen(sm, min) {
+                    transform: rotate(-360deg);
+                    writing-mode: tb-rl;
+                    &:hover {
+                        color: $square-market-blue;
+                    }
+                }
+            }
+            span.expand {
+                @include screen(sm, min) {
+                    display: none;
+                }
+                font-size: rem(16px);
+                font-weight: 400;
+                line-height: rem(18px);
+                margin-left: auto;
+            }
+        }
+        &-wrap,
+        &-col-left,
+        &-col-right {
+            display: none;
+        }
+        &-content {
+            margin-top: - rem(4px);
+            &__type {
+                color: $white;
+                font-size: rem(11px);
+                font-weight: 500;
+                letter-spacing: 1.2px;
+                line-height: rem(18px);
+                text-transform: uppercase;
+
+                @include screen(sm) {
+                    display: none;
+                }
+            }
+            &__title {
+                font-size: rem(48px);
+                font-weight: 500;
+                line-height: rem(53px);
+                margin: rem(16px) 0 rem(24px);
+                a {
+                    color: $white;
+                    transition: color 0.4s;
+                    &:hover {
+                        color: $square-market-blue;
+                    }
+                }
+
+                @include screen(sm) {
+                    margin: 0 0 rem(22px);
+                }
+
+                @include screen(custom, max, 1100) {
+                    font-size: rem(32px);
+                    line-height: rem(40px);
+                }
+            }
+            &__deck {
+                color: $white;
+                font-family: $body-font;
+                font-size: rem(16px);
+                font-weight: 400;
+                line-height: rem(24px);
+                margin-bottom: rem(38px);
+            }
+        }
+        &-explore-url {
+            padding: em(14px);
+
+            @include screen(sm) {
+                margin-bottom: rem(62px);
+            }
+        }
+        &--effect {
+            @include screen(sm, min) {
+                &::before {
+                    left: 80px;
+                }
+            }
+        }
+        &--active {
+            flex-grow: 1;
+            &::before {
+                left: 16px;
+
+                @include screen(sm, min) {
+                    left: 73px;
+                }
+            }
+
+            @include screen(sm) {
+                .featured-slider-slide-title--disabled {
+                    font-size: rem(11px);
+                    font-weight: 500;
+                    letter-spacing: 1.2px;
+                    line-height: rem(18px);
+                    margin-top: - rem(2px);
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    &-slide--active &-slide {
+        &-title {
+            h3 {
+                display: none;
+
+                @include screen(sm) {
+                    display: block;
+                }
+            }
+            .sl {
+                @include screen(sm, min) {
+                    position: relative;
+                    &::before {
+                        color: $white;
+                        content: "\2192";
+                        font-size: rem(16px);
+                        position: absolute;
+                        top: 30px;
+                    }
+                }
+            }
+            .expand {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        &-wrap {
+            display: flex;
+        }
+        &-col-left {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 1;
+            justify-content: space-between;
+            padding-left: em(42px);
+
+            @include screen(sm) {
+                padding-left: rem(16px);
+            }
+        }
+        &-col-right {
+            display: block;
+            margin-right: rem(100px);
+
+            @include screen(custom, max, 1400) {
+                margin-right: rem(60px);
+            }
+
+            @include screen(custom, max, 1236) {
+                margin-right: rem(32px);
+            }
+
+            @include screen(custom, max, 1100) {
+                margin-right: rem(24px);
+            }
+
+            @include screen(custom, max, 980) {
+                margin-right: 0;
+            }
+            img {
+                border-radius: 16px;
+                height: auto;
+                margin-left: rem(70px);
+                max-width: 480px;
+                width: 100%;
+
+                @include screen(custom, max, 1400) {
+                    margin-left: rem(32px);
+                }
+
+                @include screen(custom, max, 1236) {
+                    max-width: 380px;
+                }
+
+                @include screen(custom, max, 1100) {
+                    margin-left: rem(24px);
+                    max-width: 280px;
+                }
+
+                @include screen(custom, max, 980) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

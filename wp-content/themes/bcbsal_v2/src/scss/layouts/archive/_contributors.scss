@@ -1,0 +1,37 @@
+.archive-contributors {
+    margin-bottom: rem(40px);
+
+    @include screen (md, min) {
+        margin-bottom: rem(80px);
+    }
+    &__description {
+        font-size: rem(16px);
+        line-height: rem(24px);
+        margin: 0 0 rem(40px);
+        max-width: 584px;
+
+        @include screen (md, min) {
+            font-size: rem(20px);
+            line-height: rem(32px);
+            margin: 0 auto rem(80px);
+            text-align: center;
+        }
+    }
+    &__load-more {
+        display: none;
+        margin-bottom: rem(64px);
+        margin-top: rem(24px);
+        text-align: center;
+
+        @include screen(sm) {
+            display: block;
+        }
+        &-button {
+            font-size: rem(16px);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: rem(21px);
+            padding: em(14px) em(20px);
+        }
+    }
+}

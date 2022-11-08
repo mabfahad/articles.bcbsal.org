@@ -1,0 +1,62 @@
+.about-us {
+    margin-bottom: rem(120px);
+
+    @include screen(sm) {
+        margin-bottom: rem(60px);
+    }
+    &__heading {
+        font-family: $heading-font;
+        font-size: rem(36px);
+        font-weight: 500;
+        line-height: rem(44px);
+        margin: rem(60px) auto;
+
+        @include screen(md, min) {
+            font-size: rem(64px);
+            line-height: rem(72px);
+            margin: rem(110px) auto;
+        }
+    }
+    [class*="col-"] {
+        &:last-child {
+            @include screen(sm, min) {
+                align-items: center;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+    &__content {
+        max-width: 480px;
+        h2 {
+            font-size: rem(32px);
+            font-weight: 500;
+            line-height: rem(35px);
+            margin-bottom: rem(20px);
+        }
+        .deck {
+            font-size: rem(20px);
+            font-weight: 400;
+            line-height: rem(32px);
+        }
+
+        @include screen(sm) {
+            h2 {
+                font-size: rem(24px);
+                line-height: rem(26px);
+                margin-bottom: rem(16px);
+                margin-top: rem(30px);
+            }
+            .deck {
+                font-size: rem(18px);
+                line-height: rem(28px);
+            }
+        }
+    }
+    &__image {
+        border-radius: 16px;
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+    }
+}

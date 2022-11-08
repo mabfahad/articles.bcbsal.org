@@ -1,0 +1,93 @@
+.archive-featured-podcast {
+    padding-bottom: em(40px);
+
+    @include screen(sm, min) {
+        padding-bottom: em(60px);
+    }
+    &__post {
+        @include screen(sm, min) {
+            margin-bottom: rem(60px);
+        }
+        .card-top-image__title {
+            a {
+                color: $square-black;
+
+                @include screen(sm, min) {
+                    font-size: rem(32px);
+                    line-height: rem(40px);
+                }
+            }
+            &:hover {
+                a {
+                    color: $square-market-blue;
+                }
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        margin-bottom: rem(43px);
+
+        @include screen (sm, min) {
+            margin-bottom: rem(86px);
+            padding-right: em(24px);
+        }
+    }
+    &__column:first-child {
+        max-width: 544px;
+
+        @include screen(sm) {
+            max-width: 100%;
+        }
+    }
+    &__column:last-child {
+        text-align: right;
+        width: 100%;
+
+        @include screen(sm) {
+            display: none;
+        }
+    }
+    &__title {
+        color: $square-black;
+        font-family: $heading-font;
+        font-size: rem(36px);
+        font-weight: 500;
+        line-height: rem(44px);
+        margin-bottom: rem(20px);
+
+        @include screen (md, min) {
+            font-size: rem(48px);
+            line-height: rem(53px);
+        }
+    }
+    &__description {
+        color: $square-black;
+        font-size: rem(16px);
+        font-weight: 400;
+        line-height: rem(24px);
+        margin-bottom: 0;
+    }
+    &__button {
+        display: inline-block;
+        letter-spacing: -0.01em;
+        padding: em(14px);
+        &--desktop {
+            @include screen (sm) {
+                display: none;
+            }
+        }
+        &--mobile {
+            margin: rem(60px) 0;
+
+            @include screen (sm, min) {
+                display: none;
+            }
+        }
+    }
+    .slick-list {
+        @include screen(sm) {
+            padding: 0 20% 0 0;
+        }
+    }
+}

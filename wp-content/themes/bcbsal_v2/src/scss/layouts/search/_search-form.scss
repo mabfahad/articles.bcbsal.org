@@ -1,0 +1,60 @@
+.search-form {
+    align-items: center;
+    border-bottom: 1px solid $square-light-line;
+    display: flex;
+    justify-content: space-between;
+    margin: rem(80px) 0 rem(40px);
+    padding-bottom: em(10px);
+    padding-top: em(10px);
+    position: relative;
+
+    @include screen(sm) {
+        margin: rem(53px) 0 rem(32px);
+    }
+    &__input {
+        background-color: transparent;
+        border: none;
+        font-family: $heading-font;
+        font-size: rem(32px);
+        font-weight: 500;
+        line-height: rem(35px);
+        max-width: 90%;
+        position: relative;
+        width: 100%;
+
+        @include screen(md, min) {
+            font-size: rem(64px);
+            line-height: rem(75px);
+        }
+        &--autocomplete {
+            color: $square-light-line;
+            position: absolute;
+        }
+        &::placeholder {
+            color: $square-light-line;
+            font-family: $heading-font;
+            font-size: rem(32px);
+            font-weight: 500;
+            line-height: rem(35px);
+
+            @include screen(md, min) {
+                font-size: rem(64px);
+                line-height: rem(70px);
+            }
+        }
+    }
+    &__button {
+        margin-top: rem(16px);
+
+        @include screen(sm) {
+            margin-top: rem(10px);
+        }
+        img {
+            width: 17px;
+
+            @include screen(md, min) {
+                width: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+/* ignore WP core and misc*/
+.env
+
+*.swp
+
+*.log
+/wp-*.php
+/index.php
+license.txt
+readme.html
+wp-admin/
+wp-includes/
+xmlrpc.php
+wp-content/cache/
+wp-content/backups/
+sitemap.xml
+sitemap.xml.gz
+.DS_Store
+.idea
+elk_data
+.env
+.env.wiki
+pgdata
+public
+/templates

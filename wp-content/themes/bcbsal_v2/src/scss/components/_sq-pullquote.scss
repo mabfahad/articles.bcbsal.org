@@ -1,0 +1,87 @@
+.sq-pullquote {
+    &--home {
+        margin-bottom: rem(70px);
+        margin-top: rem(64px);
+
+        @include screen (md, min) {
+            margin-bottom: rem(120px);
+            margin-top: rem(109px);
+        }
+        blockquote {
+            &::before {
+                display: none;
+            }
+        }
+    }
+    &--archive {
+        margin-bottom: rem(64px);
+        margin-top: rem(52px);
+
+        @include screen (md, min) {
+            margin-bottom: rem(120px);
+            margin-top: rem(120px);
+        }
+    }
+    &--case-studies {
+        margin-bottom: rem(70px);
+        margin-top: rem(20px);
+
+        @include screen (md, min) {
+            margin-bottom: rem(120px);
+            margin-top: rem(30px);
+        }
+    }
+    blockquote {
+        font-family: $heading-font;
+        font-size: rem(36px);
+        font-weight: 500;
+        line-height: rem(44px);
+        margin: 0 auto;
+        max-width: 792px;
+        position: relative;
+        &::before {
+            color: $square-market-blue;
+            content: "“";
+            left: 0;
+            position: absolute;
+            top: -30px;
+        }
+
+        @include screen (md, min) {
+            font-size: rem(52px);
+            line-height: rem(60px);
+        }
+        p {
+            font-size: rem(36px);
+            font-weight: 500;
+            line-height: rem(44px);
+
+            @include screen (md, min) {
+                font-size: rem(52px);
+                line-height: rem(60px);
+            }
+        }
+        cite {
+            color: $square-grey;
+            display: block;
+            font-size: rem(16px);
+            font-style: normal;
+            font-weight: 500;
+            line-height: rem(18px);
+            margin-top: rem(22px);
+
+            @include screen (md, min) {
+                margin-top: rem(34px);
+            }
+            a {
+                border-bottom: 1px solid $square-market-blue;
+                color: $square-black;
+                text-decoration: none;
+                transition: color 0.3s;
+                &:hover {
+                    color: $square-market-blue;
+                }
+            }
+        }
+    }
+}

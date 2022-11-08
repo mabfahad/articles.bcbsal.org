@@ -1,0 +1,239 @@
+/*
+|------------------------------------------------------------------|
+|                          BREAKPOINTS                             |
+|------------------------------------------------------------------|
+*/
+
+// Define the breakpoints
+$breakpoint-xs: 36rem;
+$breakpoint-sm: 48rem;
+$breakpoint-md: 64rem;
+$breakpoint-lg: 75rem;
+
+// Default is desktop first but we can pass min type to make it mobile first
+// Usages @include screen( xs ) || @include( xs, min ) || @include( custom, max, 600 )
+@mixin screen($size, $type: max, $pixels: $breakpoint-sm) {
+    @if $size == "xs" and $type == "max" {
+        @media ($type + -width: $breakpoint-xs - 0.01) {
+            @content;
+        }
+    } @else if $size == "xs" and $type == "min" {
+        @media ($type + -width: $breakpoint-xs) {
+            @content;
+        }
+    } @else if $size == "sm" and $type == "max" {
+        @media ($type + -width: $breakpoint-sm - 0.01) {
+            @content;
+        }
+    } @else if $size == "sm" and $type == "min" {
+        @media ($type + -width: $breakpoint-sm) {
+            @content;
+        }
+    } @else if $size == "md" and $type == "max" {
+        @media ($type + -width: $breakpoint-md - 0.01) {
+            @content;
+        }
+    } @else if $size == "md" and $type == "min" {
+        @media ($type + -width: $breakpoint-md) {
+            @content;
+        }
+    } @else if $size == "lg" and $type == "lg" {
+        @media ($type + -width: $breakpoint-lg - 0.01) {
+            @content;
+        }
+    } @else if $size == "lg" and $type == "min" {
+        @media ($type + -width: $breakpoint-lg) {
+            @content;
+        }
+    } @else if $size == "custom" {
+        @media ($type + -width: ($pixels / 16) + rem) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+// Grid sizes for surge grid system
+// Type is the different screen size xs, sm, md, lg
+@mixin grids($type) {
+    .col-#{$type}-1 {
+        flex-basis: 8.33333333%;
+        -ms-flex-preferred-size: 8.33333333%;
+        max-width: 8.33333333%;
+    }
+    .col-#{$type}-2 {
+        flex-basis: 16.66666667%;
+        -ms-flex-preferred-size: 16.66666667%;
+        max-width: 16.66666667%;
+    }
+    .col-#{$type}-3 {
+        flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+        max-width: 25%;
+    }
+    .col-#{$type}-4 {
+        flex-basis: 33.33333333%;
+        -ms-flex-preferred-size: 33.33333333%;
+        max-width: 33.33333333%;
+    }
+    .col-#{$type}-5 {
+        flex-basis: 41.66666667%;
+        -ms-flex-preferred-size: 41.66666667%;
+        max-width: 41.66666667%;
+    }
+    .col-#{$type}-6 {
+        flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        max-width: 50%;
+    }
+    .col-#{$type}-7 {
+        flex-basis: 58.33333333%;
+        -ms-flex-preferred-size: 58.33333333%;
+        max-width: 58.33333333%;
+    }
+    .col-#{$type}-8 {
+        flex-basis: 66.66666667%;
+        -ms-flex-preferred-size: 66.66666667%;
+        max-width: 66.66666667%;
+    }
+    .col-#{$type}-9 {
+        flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+        max-width: 75%;
+    }
+    .col-#{$type}-10 {
+        flex-basis: 83.33333333%;
+        -ms-flex-preferred-size: 83.33333333%;
+        max-width: 83.33333333%;
+    }
+    .col-#{$type}-11 {
+        flex-basis: 91.66666667%;
+        -ms-flex-preferred-size: 91.66666667%;
+        max-width: 91.66666667%;
+    }
+    .col-#{$type}-12 {
+        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+        max-width: 100%;
+    }
+}
+
+// Make the grid fluid
+@mixin fluid-grid() {
+    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    max-width: 100%;
+}
+
+/*
+|------------------------------------------------------------------|
+|                             GRID SYSTEM                          |
+|------------------------------------------------------------------|
+*/
+
+.container,
+.container-fluid {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.row {
+    -webkit-box-direction: normal;
+    -webkit-box-flex: 0;
+    -webkit-box-orient: horizontal;
+    box-sizing: border-box;
+    display: flex;
+    display: flexbox;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.col,
+[class*="col-"] {
+    -webkit-box-flex: 0;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.col-lg,
+.col-md,
+.col-sm,
+.col-xs {
+    -webkit-box-flex: 1;
+    flex-basis: 0;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    -ms-flex-preferred-size: 0;
+    max-width: 100%;
+}
+
+/*
+|------------------------------------------------------------------|
+|                          BREAKPOINTS                             |
+|------------------------------------------------------------------|
+*/
+
+/* ---------------------------------------------
+------------ mobile first media query --------- */
+
+/* mobile */
+@include screen(xs, min) {
+    @include grids(xs);
+}
+
+/* tablet */
+@include screen(sm, min) {
+    @include grids(sm);
+}
+
+/* desktop */
+@include screen(md, min) {
+    @include grids(md);
+}
+
+/* wide desktop */
+@include screen(lg, min) {
+    @include grids(lg);
+}
+
+/* ---------------------------------------------
+----------- desktop first media query --------- */
+
+/* wide desktop */
+@include screen(lg) {
+    [class*="col-lg"]:not([class*="col-xs"]):not([class*="col-sm"]):not([class*="col-md"]) {
+        @include fluid-grid;
+    }
+}
+
+/* desktop */
+@include screen(md) {
+    [class*="col-md"]:not([class*="col-xs"]):not([class*="col-sm"]) {
+        @include fluid-grid;
+    }
+}
+
+/* tablet */
+@include screen(sm) {
+    [class*="col-sm"]:not([class*="col-xs"]) {
+        @include fluid-grid;
+    }
+}
+
+/* mobile */
+@include screen(xs) {
+    [class*="col-xs"] {
+        @include fluid-grid;
+    }
+}
