@@ -6,4 +6,4 @@
  * @since 1.0.0
  */
 
-echo 'Hello World!';
+get_header();
