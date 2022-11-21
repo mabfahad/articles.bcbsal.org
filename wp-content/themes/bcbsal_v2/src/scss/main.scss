@@ -1,38 +1,6 @@
 /* Base */
 @import "base/base";
 
-/* Theme Components  */
-@import "components/button";
-@import "components/list-item";
-@import "components/card-no-image";
-@import "components/card-no-meta";
-@import "components/card-left-image";
-@import "components/card-top-image";
-@import "components/card-large-image";
-@import "components/card-contributor";
-@import "components/card-product";
-@import "components/card-download";
-@import "components/sq-taxonomy";
-@import "components/sq-meta";
-@import "components/sq-title";
-@import "components/sq-section-title";
-@import "components/sq-pullquote";
-@import "components/sq-loader";
-
 /* Theme Layouts  */
-@import "layouts/header";
-@import "layouts/footer";
-@import "layouts/most-popular";
-@import "layouts/featured-slider";
-@import "layouts/newsletter";
-@import "layouts/contact-sales";
-@import "layouts/get-started";
-
-/* Theme templates */
-@import "templates/home";
-@import "templates/archive";
-@import "templates/tags";
-@import "templates/author";
-@import "templates/single";
-@import "templates/page";
-@import "templates/search";
+@import "./layouts/header";
+@import "./layouts/footer";

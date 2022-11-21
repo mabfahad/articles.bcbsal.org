@@ -1,0 +1,5 @@
+.eslintrc.js
+.stylelintrc.js
+assets
+node_modules
+vendor

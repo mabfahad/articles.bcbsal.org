@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta name="theme-color" content="#121212">
 
 	<?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
