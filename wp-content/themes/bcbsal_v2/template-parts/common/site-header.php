@@ -1,6 +1,6 @@
 <?php
 /**
- * Site default Footer
+ * Site default Header
  *
  * @package square
  * @since 1.0.0
