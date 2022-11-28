@@ -1,0 +1,156 @@
+.latest-article {
+    .title {
+        color: $secondary-color;
+        font-size: 2.5em;
+        font-weight: 400;
+        margin: 30px 0;
+    }
+    .latest-grid-container {
+        display: grid;
+        gap: 2em;
+        grid-template-columns: 8fr 4fr;
+
+        @include xs {
+            grid-template-columns: 1fr;
+        }
+
+        @include md {
+            grid-template-columns: 1fr;
+        }
+        .left-grid-content {
+            display: grid;
+            gap: 2em;
+            grid-template-columns: 4fr 6fr;
+            margin-bottom: 30px;
+
+            @include xs {
+                grid-template-columns: 1fr;
+            }
+
+            @include sm {
+                grid-template-columns: 1fr;
+            }
+            .left-grid-content-image {
+                overflow: hidden;
+                z-index: 9;
+                img {
+                    background-position: 50%;
+                    background-size: cover;
+                    height: 100%;
+                    transition: all 0.3s ease-in-out;
+                    width: 100%;
+                }
+                &:hover {
+                    box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
+                    img {
+                        transform: scale(1.2);
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+            .left-grid-content-section {
+                z-index: 9;
+                h4 {
+                    color: $secondary-color;
+                    font-size: 1em;
+                }
+                h3 {
+                    color: $font-color-title;
+                    cursor: pointer;
+                    font-size: 1.5em;
+                    font-weight: 400;
+                    margin: 16px 0;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+                p {
+                    line-height: 28px;
+                    margin-bottom: 16px;
+                }
+                a {
+                    transition: margin 0.3s ease-in-out;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                    &:hover span {
+                        margin-left: 10px;
+                        transition: margin 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+        .sidebar-content {
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 15px;
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+            .sidebar-content-image {
+                bottom: -2px;
+                position: absolute;
+                img {
+                    height: 600px;
+                    width: 100%;
+
+                    @include md {
+                        width: 200%;
+                    }
+                }
+            }
+            .sidebar-content-section {
+                bottom: 40px;
+                padding: 0 40px;
+                position: absolute;
+                h1 {
+                    color: #fff;
+                    font-size: 3em;
+                    font-weight: 800;
+                    line-break: auto;
+                    margin: 30px 0;
+                }
+                p {
+                    color: #fff;
+                    line-height: 20px;
+                    margin-bottom: 30px;
+                }
+                button {
+                    background-color: $yellow-color;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 1em;
+                    font-weight: 600;
+                    padding: 0.7em 1em;
+                    width: 100%;
+                    &:hover {
+                        color: $primary-color;
+                        transition: all 200ms;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.load-more-btn {
+    margin: 40px 0;
+    text-align: center;
+    button {
+        background-color: transparent;
+        border: 1px solid;
+        border-color: $primary-color;
+        border-radius: 5px;
+        color: $secondary-color;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 0.8em 2em;
+        &:hover {
+            background-color: $primary-color;
+            color: #fff;
+            transition: all 200ms;
+        }
+    }
+}

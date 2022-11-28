@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
+
+// colors
+$primary-color: #004e87;
+$secondary-color: #0078cc;
+$yellow-color: #fcd505;
+$white-color: #fff;
+$font-color-primary: #373737;
+$font-color-title: #000;
+$main-fontsize: 36px;
+$secondary-fontsize: 16px;
+$black-color: #000;
+$divider-color: #c8c6c6;
+$icons-color: #808080;
+$red-color: #e02829;
+$light-yellow-color: #fdc748;
+$borders-gray-color: #d9d9d9;
+$main-title-font-size: 4.6rem;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #454242;
+    font-family: Open, sans-serif;
+    overflow-x: hidden;
+}
+
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1c0404;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 85vw;
+    width: 1200px;
+}
+
+@mixin xs {
+    @media screen and (max-width: 575px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: 576px) and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: 768px) and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin lg-between {
+    @media (min-width: 993px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+
+// common design
+
+
+/* banner secondary text */
+@mixin banner-secondary-text {
+    font-size: calc($secondary-fontsize + 4px);
+
+    @include xs {
+        font-size: $secondary-fontsize;
+    }
+
+    @include sm {
+        font-size: $secondary-fontsize;
+    }
+
+    @include md {
+        font-size: $secondary-fontsize;
+    }
+}
+
+/* body font secondary */
+@mixin body-font-secondary {
+    font-size: $secondary-fontsize + 2px;
+
+    @include xs {
+        font-size: $secondary-fontsize;
+    }
+
+    @include sm {
+        font-size: $secondary-fontsize;
+    }
+
+    @include md {
+        font-size: $secondary-fontsize;
+    }
+}

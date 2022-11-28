@@ -1,0 +1,27 @@
+.social-link-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @include xs {
+        margin-top: 50px;
+    }
+
+    @include md {
+        margin-top: 50px;
+    }
+    .social-link-icons {
+        a {
+            img {
+                color: $primary-color;
+                font-size: 2em;
+                margin: 0 0.5em;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $secondary-color;
+                    scale: 1.2;
+                }
+            }
+        }
+    }
+}

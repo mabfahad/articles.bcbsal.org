@@ -11,4 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+get_template_part( 'template-parts/common/featured' );
+get_template_part( 'template-parts/common/latest-articles' );
+get_template_part( 'template-parts/common/social-media' );
 get_footer();

@@ -4,7 +4,7 @@
  *
  * This is the default site footer.
  *
- * @package square
+ * @package bcbsal_v2
  * @since 1.0.0
  */
 

@@ -2,7 +2,7 @@
 /**
  * Site default Header
  *
- * @package square
+ * @package bcbsal_v2
  * @since 1.0.0
  */
 
@@ -13,44 +13,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 $modifier = $args['modifier'] ?? '';
 $is_black = 'site-header--black' === $modifier ?? false;
 ?>
-<div id="header">
-	<header class="site-header site-header--border-bottom <?php echo esc_attr( $modifier ); ?>">
-		<div class="container desktop-header">
-			<div class="row">
-				<div class="col-md-4">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-header-site-logo">
-						<?php if ( $is_black ) { ?>
-							<img width="300" src="<?php echo esc_url( image_url( 'BCBS-Logo.png' ) ); ?>" alt="BCBSal">
-						<?php } else { ?>
-							<img width="300" src="<?php echo esc_url( image_url( 'BCBS-Logo.png' ) ); ?>" alt="BCBSal">
-						<?php } ?>
-					</a>
-				</div>
-
-				<div class="col-md-8 text-right">
-					<ul class="site-header__menu">
-						<?php surge_custom_menu( PRIMARY_MENU ); ?>
-					</ul>
-					<form role="search" method="get" class="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input type="text" placeholder="Search here" name="s" id="s">
-						<img width="24" height="auto" src="<?php echo esc_url( image_url( 'icon-search.png' ) ); ?>" alt="Search">
-					</form>
-				</div>
+<nav class="main-nav">
+		<div class="main-nav-container">
+			<div class="site-logo">
+				<a href="./index.html">
+					<img width="290px" class="site-img" src="<?php echo esc_url( image_url( 'BCBS-Logo.png' ) ); ?>" alt="" />
+				</a>
 			</div>
-		</div>
-		<div class="secondary-menu">
-			<div class="container">
-				<ul class="list">
-					<li><span>myBlueCross</span>
-						<ul class="list__dropdown">
-							<?php surge_custom_menu( 'Secondary Menu' ); ?>
-						</ul>
-					</li>
-					<li>Find a doctor</li>
-				</ul>
+			<ul class="main-nav-ul">
+				<?php surge_custom_menu( 'primary-menu' ); ?>
+				<input class="input-text" type="text" placeholder="Search Here">
 
-				<a href="https://www.bcbsal.org/webapps/customeraccess/Dispatch?application=org.bcbsal.inet.customermgmt.CustomerSelfRegistrationApplication&amp;responsive=true" class="btn-custom">Register <span> for myBlueCross</span></a>
-			</div><!-- ./container -->
+				<li id="search-text">
+					<a><img width="25px" src="<?php echo esc_url( image_url( 'icon-search.png' ) ); ?>"/></a>
+			</ul>
+			<button class="main-nav-toggle-btn" id="main-nav-toogle-btn">
+				<span>Menu</span>
+				<img width="50px" src="<?php echo esc_url( image_url( 'icon-menu.png' ) ); ?>" alt="menu"/>
+			</button>
 		</div>
-	</header>
-</div>
+		<nav class="nav-bottom">
+			<div class="container">
+				<ul>
+					<li>
+						<div class="dropdown" id="dropdown">
+							<a > <span>myBlueCross</span>  <img class="nav-bottom-img-1" src="<?php echo esc_url( image_url( 'down-arrow-1.png' ) ); ?>" alt="menu"/></a>
+							<div class="dropdown-content">
+
+								<div class="dropdown-div">
+									<p>
+										Account Summary
+									</p>
+									<p>Claim Statement</p>
+									<p>ID Cards</p>
+								</div>
+
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#">Find a Doctor</a>
+					</li>
+				</ul>
+				<a class="register-btn" href="#">
+					Register for myBlueCross
+				</a>
+			</div>
+		</nav>
+	</nav>
